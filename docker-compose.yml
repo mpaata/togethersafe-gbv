@@ -1,0 +1,57 @@
+services:
+  # ---------------------------------------------------------
+  # PostgreSQL Database (Stores all case data, users, etc.)
+  # ---------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: togethersafe-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: togethersafe_db
+      POSTGRES_USER: togethersafe
+      POSTGRES_PASSWORD: togethersafe_local_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - togethersafe-network
+
+  # ---------------------------------------------------------
+  # Keycloak (Handles OAuth 2.0 / LDAP Authentication)
+  # ---------------------------------------------------------
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    container_name: togethersafe-auth
+    restart: unless-stopped
+    environment:
+      # Admin credentials for the Keycloak web interface
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      
+      # Database connection settings
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/togethersafe_db
+      KC_DB_USERNAME: togethersafe
+      KC_DB_PASSWORD: togethersafe_local_password
+    command: start-dev
+    ports:
+      - "8180:8080"
+    depends_on:
+      - postgres
+    networks:
+      - togethersafe-network
+
+# ---------------------------------------------------------
+# Persistent Volumes
+# ---------------------------------------------------------
+volumes:
+  postgres_data:
+    driver: local
+
+# ---------------------------------------------------------
+# Internal Network
+# ---------------------------------------------------------
+networks:
+  togethersafe-network:
+    driver: bridge
