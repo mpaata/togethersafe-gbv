@@ -13,9 +13,8 @@ def test_crisis_reply():
 
 def test_normal_help_request_returns_verified_info():
     reply = generate_reply("I need help finding a shelter", crisis_detected=False)
-    # The AI should return verified shelter info from the knowledge base
     assert "shelter" in reply.lower() or "help" in reply.lower()
-    assert "999" in reply  # Disclaimer is always included
+    assert "999" in reply
 
 def test_default_reply():
     reply = generate_reply("Hello there", crisis_detected=False)
