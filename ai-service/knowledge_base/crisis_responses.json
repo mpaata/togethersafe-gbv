@@ -1,0 +1,14 @@
+{
+  "en": {
+    "crisis_message": "Your safety is the priority. Please call 999 or a crisis line immediately. You are not alone.",
+    "disclaimer": "I am an AI assistant. If you are in immediate danger, please call 999."
+  },
+  "lg": {
+    "crisis_message": "Obukuumi bwo bwe busooka. Tukirira eddoboozi 999 oba essimu y'okuyamba amangu. Toli weka.",
+    "disclaimer": "Nze munnayuganda wa AI. Bw'oba mu kabi akatungire, tukirira 999."
+  },
+  "sw": {
+    "crisis_message": "Usalama wako ndio kipaumbele. Tafadhali piga simu 999 au msaada wa dharura mara moja. Huko peke yako.",
+    "disclaimer": "Mimi ni msaidizi wa AI. Ikiwa uko hatarini, tafadhali piga simu 999."
+  }
+}

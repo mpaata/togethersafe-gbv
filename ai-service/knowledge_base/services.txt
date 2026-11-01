@@ -1,0 +1,90 @@
+--- VERIFIED GBV SERVICES IN UGANDA (v1) ---
+
+**EMERGENCY & POLICE**
+Organization: Uganda Police Force (Emergency)
+Category: Police
+Location: National
+Phone: 999
+Description: 24/7 emergency response for any GBV incident. Ask to be connected to the Child and Family Protection Unit (CFPU) if the case involves a child or domestic violence.
+
+Organization: Child and Family Protection Unit (CFPU) - Uganda Police
+Category: Police
+Location: National (operates in districts like Tororo, Lira, Hoima, Kiryandongo)
+Phone: 999 (Ask for CFPU)
+Description: Specialized unit within the Uganda Police that handles sexual and gender-based violence, domestic violence, and child protection cases [citation:13].
+
+**GOVERNMENT & MINISTRY**
+Organization: Ministry of Gender, Labour and Social Development (MGLSD)
+Category: Government
+Location: Plot 2, Simbamanyo House, George Street, Kampala
+Phone: +256 41 4 347854 / +256 41 4 347855
+Email: (via NGBVD system)
+Description: The official government ministry responsible for GBV policy, the National GBV Database (NGBVD), and coordination of referrals and support [citation:11].
+
+**LEGAL AID & RIGHTS**
+Organization: FIDA Uganda (Uganda Association of Women Lawyers)
+Category: Legal
+Location: Plot 54 Bukoto Street, Kampala (also Plot 9, Ntinda Avenue)
+Phone: (256) 41 530 848
+Email: fida@fidauganda.or.ug
+Description: Provides legal aid, representation, and emotional support for women and survivors of gender-based violence [citation:4][citation:12].
+
+Organization: Justice Centres Uganda (JCU)
+Category: Legal
+Location: Kampala (High Court Chambers, F6 & F8); Tororo; Lira; Hoima
+Phone: Toll Free: 0 800 10 02 10 / +256 759 500 440
+Email: info@justicecentres.go.ug
+Description: Provides free legal aid, representation, counseling, and referrals for vulnerable communities, including GBV survivors [citation:1].
+
+Organization: Uganda Law Society - Legal Aid Project
+Category: Legal
+Location: Plot 610 Buye, Off Ntinda Kisaasi Road, Kampala
+Phone: (Not listed in search, inquire via email)
+Email: recruitment@uls.or.ug (for inquiries)
+Description: Provides legal aid and representation [citation:8].
+
+**CIVIL SOCIETY & SUPPORT ORGANIZATIONS**
+Organization: Raising Voices
+Category: Prevention & Advocacy
+Location: Plot 16 Tufnell Drive, Kamwokya, Kampala
+Phone: +256 414 531186 / +256 312 266400
+Email: info@raisingvoices.org
+Description: A nonprofit working toward the prevention of violence against women and children [citation:2][citation:10].
+
+Organization: Mifumi
+Category: Counselling & Support
+Location: (National Helpline)
+Phone: (Helpline available - exact number not listed in search)
+Description: Provides emotional counselling and support services for survivors of gender-based violence [citation:9].
+
+Organization: Set Her Free
+Category: Shelter & Reintegration
+Location: Kawempe, Kate Falawoo Dr. Sembeguya Road, Kampala
+Phone: +256 775 682826 / +256 703 113188
+Description: Offers temporary shelter, counseling, medical care, education, and reintegration for female victims of trafficking and GBV [citation:7].
+
+Organization: Somero Uganda
+Category: Shelter & Support
+Location: Bwaise Mukalazi road Kazo, Kampala (also Busia, Napak, Zombo)
+Phone: +256 705 184 775
+Email: somerouganda2009@gmail.com
+Description: Offers individual counselling, vocational training, and emergency shelter to women, girls, and boys under 18 [citation:7].
+
+Organization: Facilitation for Peace and Development (FAPAD)
+Category: Legal & Support
+Location: Plot 2, Kyoga Rd, Lira
+Phone: (Not listed)
+Description: Provides SGBV support, legal advice, court representation, and community empowerment in the Lango sub-region (Lira, Apac, Oyam, Kole, etc.) [citation:1].
+
+**HELPLINES**
+Organization: Uganda Child Helpline
+Category: Helpline
+Phone: (Available via Apple Services listing)
+Description: Child-support hotline providing assistance and referrals for child abuse and neglect [citation:9].
+
+Organization: Mental Health Uganda
+Category: Helpline
+Phone: (Free counselling number available via Apple Services listing)
+Description: Free counselling support for anyone experiencing mental-health issues [citation:9].
+
+--- END OF SERVICE DIRECTORY ---
