@@ -25,3 +25,13 @@ def test_no_false_positive():
     result = detect_crisis("I had a good day today.")
     assert result["crisis"] is False
     assert result["type"] is None
+
+def test_detect_soft_crisis_signal():
+    result = detect_crisis("I cant do this anymore")
+    assert result["crisis"] is True
+    assert result["type"] == "SUICIDAL_IDEATION"
+
+def test_detect_soft_crisis_with_apostrophe():
+    result = detect_crisis("I can't do this anymore")
+    assert result["crisis"] is True
+    assert result["type"] == "SUICIDAL_IDEATION"
