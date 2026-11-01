@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api import crisis
+from app.api import crisis, chat
 
 app = FastAPI(
     title="TogetherSafe AI Service",
@@ -9,6 +9,7 @@ app = FastAPI(
 
 # Register routers
 app.include_router(crisis.router, prefix="/ai", tags=["Crisis Detection"])
+app.include_router(chat.router, prefix="/ai", tags=["AI Chat"])
 
 @app.get("/health")
 def health_check():
