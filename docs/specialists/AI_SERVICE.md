@@ -297,3 +297,27 @@ Don't trust user input --- validate with Pydantic.
 Don't hardcode secrets --- use environment variables.
 
 Don't return stack traces to the client.
+
+## 13. Amani Model 1 — Production Features (v1.1)
+
+### What It Does
+- **Crisis Detection:** Direct + soft signals (e.g., "I cant do this anymore").
+- **Multi-Language:** English (en), Luganda (lg), Swahili (sw).
+- **RAG (Verified Knowledge Base):** Searches `knowledge_base/services.txt` for real Ugandan GBV services.
+- **Bounded Responses:** Never gives medical or legal advice.
+
+### Key Files
+- `app/services/crisis_detector.py` — Crisis keyword detection.
+- `app/services/rag_service.py` — Knowledge base search.
+- `app/services/language_service.py` — Multi-language crisis/disclaimer loader.
+- `app/services/chatbot.py` — Reply generator.
+- `knowledge_base/services.txt` — Verified Ugandan GBV services.
+- `knowledge_base/crisis_responses.json` — EN/LG/SW crisis messages.
+
+### API Contract
+- `POST /ai/chat` — Accepts `{sessionId, message, language}`, returns `{reply, crisisDetected, suggestedResources, disclaimer}`.
+- `POST /ai/detect-crisis` — Accepts `{text}`, returns crisis classification.
+
+### Tests
+- 12 pytest tests in `ai-service/tests/`.
+- Run with: `pytest ai-service/tests/ -v`
