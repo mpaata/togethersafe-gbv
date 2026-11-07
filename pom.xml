@@ -21,6 +21,9 @@
     <description>Survivor Support and Gender-Based Violence Case Management Platform</description>
 
     <modules>
+
+    <module>backend</module>
+    <!-- <module>desktop</module> -->
         <!-- Uncomment after backend/pom.xml and desktop/pom.xml are created -->
         <!-- <module>backend</module> -->
         <!-- <module>desktop</module> -->
