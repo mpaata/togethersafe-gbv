@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.togethersafe.desktop.controller.survivor.MyCasesController"
+            styleClass="root">
+
+    <left>
+        <VBox styleClass="sidebar" spacing="8">
+            <Label text="TogetherSafe" styleClass="sidebar-title"/>
+            <Label text="Home" styleClass="sidebar-menu-item"/>
+            <Label text="SOS Center" styleClass="sidebar-menu-item"/>
+            <Label text="My Cases" styleClass="sidebar-menu-item-active"/>
+            <Label text="Evidence Vault" styleClass="sidebar-menu-item"/>
+            <Label text="Find Help" styleClass="sidebar-menu-item"/>
+            <Label text="AI Chat" styleClass="sidebar-menu-item"/>
+            <Label text="Settings" styleClass="sidebar-menu-item"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="content-area" spacing="24">
+            <HBox alignment="CENTER_LEFT" spacing="16">
+                <VBox spacing="4">
+                    <Label text="My Cases" styleClass="h1"/>
+                    <Label text="View and manage your reported cases." styleClass="body-text"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ New Case" styleClass="btn-primary"/>
+            </HBox>
+
+            <VBox styleClass="card" spacing="16">
+                <TextField fx:id="searchField" promptText="Search by case ID or type..." />
+                <TableView fx:id="casesTable" prefHeight="500">
+                    <columns>
+                        <TableColumn fx:id="colCaseRef" text="Case ID" prefWidth="150"/>
+                        <TableColumn fx:id="colType" text="Type" prefWidth="200"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                        <TableColumn fx:id="colPriority" text="Priority" prefWidth="120"/>
+                        <TableColumn fx:id="colCreated" text="Created" prefWidth="180"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
