@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.togethersafe.desktop.controller.survivor.SurvivorHomeController"
+            styleClass="root">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" spacing="8">
+            <Label text="TogetherSafe" styleClass="sidebar-title"/>
+            <Label text="Home" styleClass="sidebar-menu-item-active"/>
+            <Label text="SOS Center" styleClass="sidebar-menu-item"/>
+            <Label text="My Cases" styleClass="sidebar-menu-item"/>
+            <Label text="Evidence Vault" styleClass="sidebar-menu-item"/>
+            <Label text="Find Help" styleClass="sidebar-menu-item"/>
+            <Label text="AI Chat" styleClass="sidebar-menu-item"/>
+            <Label text="Settings" styleClass="sidebar-menu-item"/>
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24">
+                <!-- Header -->
+                <VBox spacing="8">
+                    <Label text="SOS Center" styleClass="h1"/>
+                    <Label text="In an emergency, you are not alone. Get immediate help." styleClass="body-text"/>
+                </VBox>
+
+                <!-- SOS Button -->
+                <VBox styleClass="card" alignment="CENTER" spacing="16">
+                    <Label text="Need Immediate Help?" styleClass="h2"/>
+                    <Label text="Press the SOS button for emergency assistance." styleClass="body-text"/>
+                    <Button text="SOS NOW" styleClass="btn-sos" onAction="#handleSos"/>
+                </VBox>
+
+                <!-- Emergency Contacts -->
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Emergency Contacts" styleClass="h2"/>
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <Label text="Police: 999" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Call" styleClass="btn-primary"/>
+                    </HBox>
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <Label text="Medical: 112" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Call" styleClass="btn-primary"/>
+                    </HBox>
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <Label text="Child Protection: 0800 123 456" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Call" styleClass="btn-primary"/>
+                    </HBox>
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <Label text="Counselling: 0800 333 444" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Call" styleClass="btn-primary"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Quick Actions -->
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Quick Actions" styleClass="h2"/>
+                    <HBox spacing="16">
+                        <Button text="Report Abuse" styleClass="btn-primary"/>
+                        <Button text="Find Help Map" styleClass="btn-primary"/>
+                        <Button text="Talk to Amani (AI)" styleClass="btn-primary"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
