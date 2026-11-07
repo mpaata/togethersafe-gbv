@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: togethersafe-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/togethersafe_db
+    username: togethersafe
+    password: togethersafe_local_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+logging:
+  level:
+    com.togethersafe: INFO
+    org.springframework.security: INFO
