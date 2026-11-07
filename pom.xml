@@ -23,6 +23,7 @@
     <modules>
 
     <module>backend</module>
+    <module>desktop</module>
     <!-- <module>desktop</module> -->
         <!-- Uncomment after backend/pom.xml and desktop/pom.xml are created -->
         <!-- <module>backend</module> -->
