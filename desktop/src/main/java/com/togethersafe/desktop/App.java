@@ -20,7 +20,8 @@ public class App extends Application {
             System.out.println("Logo could not be loaded: " + e.getMessage());
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SurvivorHome.fxml"));
+        // Load the Login screen first
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 1280, 800);

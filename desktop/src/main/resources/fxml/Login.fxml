@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.togethersafe.desktop.controller.LoginController"
+           styleClass="root">
+
+    <VBox alignment="CENTER" spacing="20" styleClass="card" maxWidth="400" maxHeight="500">
+        <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+            <image>
+                <Image url="@/images/logo.jpeg"/>
+            </image>
+        </ImageView>
+
+        <Label text="TogetherSafe" styleClass="h1"/>
+        <Label text="Sign in to continue" styleClass="body-text"/>
+
+        <TextField fx:id="usernameField" promptText="Username" maxWidth="300"/>
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300"/>
+
+        <Button text="Sign In" styleClass="btn-primary" maxWidth="300" onAction="#handleLogin"/>
+        <Button text="Report Anonymously (No Login)" styleClass="body-text" onAction="#handleAnonymousReport"/>
+
+        <Label fx:id="errorLabel" textFill="red"/>
+    </VBox>
+</StackPane>
