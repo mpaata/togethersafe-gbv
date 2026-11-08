@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.survivor.ServicesController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Services Near You" styleClass="h1"/>
+                <Label text="Find verified support services in your area. All organizations are vetted." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="16" alignment="CENTER_LEFT">
+                    <TextField promptText="Search by name or location..." prefWidth="350"/>
+                    <ComboBox fx:id="serviceCategoryCombo" promptText="Category" prefWidth="200"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="📍 Use My Location" styleClass="btn-primary" onAction="#handleLocation"/>
+                </HBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Safe Haven Counselling Centre" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Free and confidential counselling for survivors of GBV." styleClass="body-text" wrapText="true"/>
+                    <HBox spacing="16">
+                        <Label text="📍 Kampala" styleClass="body-text"/>
+                        <Label text="📞 +256 700 123 456" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Get Directions" styleClass="btn-primary" onAction="#handleDirections"/>
+                    </HBox>
+                </VBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Kampala Central Police Station — CFPU" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="24/7 emergency response for GBV incidents. Ask for the GBV desk." styleClass="body-text" wrapText="true"/>
+                    <HBox spacing="16">
+                        <Label text="📍 Kampala Road" styleClass="body-text"/>
+                        <Label text="📞 999" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Get Directions" styleClass="btn-primary" onAction="#handleDirections"/>
+                    </HBox>
+                </VBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Mulago National Referral Hospital" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Emergency medical assistance including PEP for sexual assault." styleClass="body-text" wrapText="true"/>
+                    <HBox spacing="16">
+                        <Label text="📍 Mulago, Kampala" styleClass="body-text"/>
+                        <Label text="📞 112" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Get Directions" styleClass="btn-primary" onAction="#handleDirections"/>
+                    </HBox>
+                </VBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="FIDA Uganda (Legal Aid)" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Free legal aid, representation, and help obtaining protection orders." styleClass="body-text" wrapText="true"/>
+                    <HBox spacing="16">
+                        <Label text="📍 Plot 54 Bukoto Street, Kampala" styleClass="body-text"/>
+                        <Label text="📞 +256 41 530 848" styleClass="body-text"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Get Directions" styleClass="btn-primary" onAction="#handleDirections"/>
+                    </HBox>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

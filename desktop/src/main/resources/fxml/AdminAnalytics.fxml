@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.AdminPlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <VBox spacing="4">
+                        <Label text="Analytics" styleClass="h1"/>
+                        <Label text="Program impact and case trends." styleClass="body-text"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <ComboBox promptText="Last 30 days" prefWidth="180"/>
+                </HBox>
+
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Total Cases" styleClass="body-text"/>
+                        <Label text="1,247" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #4F46E5;"/>
+                        <Label text="↑ 18% vs last month" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Survivors Supported" styleClass="body-text"/>
+                        <Label text="2,856" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+                        <Label text="↑ 24% vs last month" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Resolution Rate" styleClass="body-text"/>
+                        <Label text="82%" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #F59E0B;"/>
+                        <Label text="↑ 5% vs last month" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </VBox>
+                </HBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Case Trends (Last 6 Months)" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Region prefHeight="200" style="-fx-background-color: #F8FAFC; -fx-background-radius: 8;"/>
+                </VBox>
+
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="Case Types" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <Label text="Physical Assault: 42%" styleClass="body-text"/>
+                        <Label text="Sexual Assault: 28%" styleClass="body-text"/>
+                        <Label text="Emotional Abuse: 18%" styleClass="body-text"/>
+                        <Label text="Neglect: 12%" styleClass="body-text"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="Top Locations" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <Label text="Kampala: 247 cases" styleClass="body-text"/>
+                        <Label text="Wakiso: 89 cases" styleClass="body-text"/>
+                        <Label text="Mukono: 56 cases" styleClass="body-text"/>
+                        <Label text="Entebbe: 34 cases" styleClass="body-text"/>
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="backButton" text="← Back to Admin Dashboard" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

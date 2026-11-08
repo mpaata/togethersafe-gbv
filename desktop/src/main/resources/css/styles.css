@@ -1,124 +1,170 @@
-/* TogetherSafe Global Styles - Based on DESIGN_SYSTEM.md */
+/* TogetherSafe Global Styles */
 
 .root {
-    -fx-font-family: "Inter", "Segoe UI", sans-serif;
-    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
     -fx-background-color: #F8FAFC;
 }
 
 /* Sidebar */
 .sidebar {
-    -fx-background-color: #0F172A;
-    -fx-padding: 20 0 20 0;
-    -fx-min-width: 240px;
-    -fx-pref-width: 240px;
+    -fx-background-color: #0A1642;
+    -fx-padding: 0;
+}
+
+.sidebar-logo {
+    -fx-padding: 24;
 }
 
 .sidebar-title {
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 18px;
-    -fx-font-weight: 700;
-    -fx-padding: 0 20 20 20;
+    -fx-font-weight: bold;
 }
 
+.sidebar-section-title {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 11px;
+    -fx-padding: 16 24 8 24;
+    -fx-font-weight: bold;
+}
+
+/* Sidebar Menu Items */
 .sidebar-menu-item {
-    -fx-text-fill: #94A3B8;
+    -fx-text-fill: #A0ABC0;
     -fx-font-size: 14px;
-    -fx-padding: 12 20 12 20;
+    -fx-padding: 12 24 12 24;
     -fx-cursor: hand;
+    -fx-background-radius: 8;
+    -fx-background-insets: 2 16 2 16;
+    -fx-graphic-text-gap: 16;
 }
 
 .sidebar-menu-item:hover {
-    -fx-background-color: #1E293B;
+    -fx-background-color: #1A275A;
     -fx-text-fill: #FFFFFF;
 }
 
 .sidebar-menu-item-active {
     -fx-text-fill: #FFFFFF;
-    -fx-font-weight: 600;
-    -fx-background-color: #4F46E5;
-    -fx-border-color: #4F46E5;
-    -fx-border-width: 0 0 0 4;
+    -fx-font-weight: bold;
+    -fx-background-color: #2E44A8;
+    -fx-background-radius: 8;
+    -fx-background-insets: 2 16 2 16;
+    -fx-graphic-text-gap: 16;
 }
 
-/* Main content area */
+.sidebar-icon {
+    -fx-fill: #A0ABC0;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.sidebar-menu-item:hover .sidebar-icon,
+.sidebar-menu-item-active .sidebar-icon {
+    -fx-fill: #FFFFFF;
+}
+
+/* Top Bar (FIXED: no overlap with sidebar) */
+.top-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 16 32 16 32;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 0 0 1 0;
+    -fx-alignment: center-left;
+    -fx-spacing: 16;
+}
+
+.search-field {
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 20;
+    -fx-padding: 10 20 10 20;
+    -fx-prompt-text-fill: #64748B;
+    -fx-border-color: transparent;
+}
+
+.search-field:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #4F46E5;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+}
+
+/* Clickable Text */
+.clickable-text {
+    -fx-cursor: hand;
+    -fx-text-fill: #0F172A;
+    -fx-font-weight: bold;
+}
+.clickable-text:hover {
+    -fx-text-fill: #4F46E5;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.language-dropdown .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* Circular Globe Icon (rounded background) */
+.globe-circle {
+    -fx-background-color: #EEF2FF;
+    -fx-background-radius: 50;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-max-width: 32;
+    -fx-max-height: 32;
+    -fx-alignment: center;
+}
+
+.globe-icon {
+    -fx-fill: #4F46E5;
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+}
+
+/* Content Area */
 .content-area {
     -fx-padding: 32;
     -fx-background-color: #F8FAFC;
 }
 
-/* SOS Button - Critical emergency */
+/* SOS Button */
 .btn-sos {
     -fx-background-color: #DC2626;
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 18px;
-    -fx-font-weight: 700;
+    -fx-font-weight: bold;
     -fx-background-radius: 12;
     -fx-padding: 16 32 16 32;
     -fx-cursor: hand;
-    -fx-border-color: transparent;
 }
 
 .btn-sos:hover {
     -fx-background-color: #B91C1C;
 }
 
-/* Primary Button */
-.btn-primary {
-    -fx-background-color: #4F46E5;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-size: 14px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 8;
-    -fx-padding: 10 20 10 20;
-    -fx-cursor: hand;
-}
-
-.btn-primary:hover {
-    -fx-background-color: #4338CA;
-}
-
-/* Card */
+/* Cards */
 .card {
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 12;
     -fx-padding: 24;
-    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 6, 0, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.05), 10, 0, 0, 4);
 }
 
 /* Headings */
-.h1 {
-    -fx-font-size: 24px;
-    -fx-font-weight: 600;
-    -fx-text-fill: #0F172A;
-}
+.h1 { -fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0F172A; }
+.h2 { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #0F172A; }
+.body-text { -fx-font-size: 14px; -fx-text-fill: #475569; }
 
-.h2 {
-    -fx-font-size: 20px;
-    -fx-font-weight: 600;
-    -fx-text-fill: #0F172A;
+.back-button {
+    -fx-cursor: hand;
 }
-
-.body-text {
-    -fx-font-size: 14px;
-    -fx-text-fill: #475569;
-}
-
-/* Status badges */
-.badge-open {
-    -fx-background-color: #EFF6FF;
-    -fx-text-fill: #1D4ED8;
-    -fx-background-radius: 999;
-    -fx-padding: 4 10 4 10;
-    -fx-font-size: 12px;
-    -fx-font-weight: 600;
-}
-
-.badge-critical {
-    -fx-background-color: #FEF2F2;
-    -fx-text-fill: #B91C1C;
-    -fx-background-radius: 999;
-    -fx-padding: 4 10 4 10;
-    -fx-font-size: 12px;
-    -fx-font-weight: 600;
+.back-button:hover {
+    -fx-text-fill: #4F46E5;
+    -fx-underline: true;
 }

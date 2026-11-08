@@ -9,22 +9,28 @@
            fx:controller="com.togethersafe.desktop.controller.LoginController"
            styleClass="root">
 
-    <VBox alignment="CENTER" spacing="20" styleClass="card" maxWidth="400" maxHeight="500">
+    <VBox alignment="CENTER" spacing="16" styleClass="card" maxWidth="450" maxHeight="700">
+        
         <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
-            <image>
-                <Image url="@/images/logo.jpeg"/>
-            </image>
+            <image><Image url="@/images/logo.jpeg"/></image>
         </ImageView>
 
-        <Label text="TogetherSafe" styleClass="h1"/>
-        <Label text="Sign in to continue" styleClass="body-text"/>
+        <Label fx:id="titleLabel" text="TogetherSafe" styleClass="h1"/>
+        <Label fx:id="subtitleLabel" text="Sign in to continue" styleClass="body-text"/>
 
-        <TextField fx:id="usernameField" promptText="Username" maxWidth="300"/>
-        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300"/>
+        <TextField fx:id="usernameField" promptText="Username" maxWidth="350" style="-fx-padding: 10;"/>
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="350" style="-fx-padding: 10;"/>
+        
+        <!-- Registration fields (hidden initially) -->
+        <TextField fx:id="fullNameField" promptText="Full Name" maxWidth="350" style="-fx-padding: 10;" visible="false" managed="false"/>
+        <ComboBox fx:id="roleCombo" promptText="Role" maxWidth="350" visible="false" managed="false" style="-fx-padding: 6;"/>
 
-        <Button text="Sign In" styleClass="btn-primary" maxWidth="300" onAction="#handleLogin"/>
-        <Button text="Report Anonymously (No Login)" styleClass="body-text" onAction="#handleAnonymousReport"/>
+        <Button fx:id="signInButton" text="Sign In" styleClass="btn-primary" maxWidth="350" onAction="#handleLogin"/>
+        
+        <Button fx:id="registerButton" text="Create Account" styleClass="btn-secondary" maxWidth="350" onAction="#handleRegisterToggle"/>
+        
+        <Button text="Report Anonymously (No Login)" style="-fx-background-color: transparent; -fx-text-fill: #2E44A8; -fx-cursor: hand;" onAction="#handleAnonymousReport"/>
 
-        <Label fx:id="errorLabel" textFill="red"/>
+        <Label fx:id="errorLabel" style="-fx-text-fill: #DC2626; -fx-font-weight: bold;"/>
     </VBox>
 </StackPane>

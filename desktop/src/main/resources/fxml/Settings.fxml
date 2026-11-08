@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController">
+    <center>
+        <VBox alignment="CENTER" spacing="16" styleClass="content-area">
+            <Label text="S e t t i n g s" styleClass="h1"/>
+            <Label text="This module is coming soon." styleClass="body-text"/>
+            <Button fx:id="backButton" text="? Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+        </VBox>
+    </center>
+</BorderPane>
+

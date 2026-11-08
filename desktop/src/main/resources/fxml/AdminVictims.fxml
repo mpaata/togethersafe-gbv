@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.admin.AdminVictimsController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <VBox spacing="4">
+                        <Label text="Victims" styleClass="h1"/>
+                        <Label text="Manage survivor records and contact information." styleClass="body-text"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <TextField promptText="Search victims..." prefWidth="300"/>
+                    <Button text="+ Add Victim" styleClass="btn-primary" onAction="#handleAddVictim"/>
+                </HBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Survivor Records" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <TableView fx:id="victimsTable" prefHeight="500">
+                        <columns>
+                            <TableColumn fx:id="colId" text="Victim ID" prefWidth="100"/>
+                            <TableColumn fx:id="colName" text="Name" prefWidth="200"/>
+                            <TableColumn fx:id="colAge" text="Age" prefWidth="80"/>
+                            <TableColumn fx:id="colLocation" text="Location" prefWidth="150"/>
+                            <TableColumn fx:id="colCases" text="Cases" prefWidth="100"/>
+                            <TableColumn fx:id="colLastContact" text="Last Contact" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Admin Dashboard" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

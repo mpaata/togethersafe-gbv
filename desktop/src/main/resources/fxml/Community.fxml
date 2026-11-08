@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController">
+    <center>
+        <VBox alignment="CENTER" spacing="24" styleClass="content-area">
+            <Label text="Community" styleClass="h1"/>
+            <Label text="Connect with other survivors and support groups. Share your journey and find strength in numbers." styleClass="body-text"/>
+            
+            <HBox spacing="24" alignment="CENTER">
+                <VBox styleClass="card" alignment="CENTER" spacing="12" prefWidth="250">
+                    <Label text="💬" style="-fx-font-size: 32px;"/>
+                    <Label text="Support Groups" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                    <Label text="Join weekly virtual sessions." styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                </VBox>
+                <VBox styleClass="card" alignment="CENTER" spacing="12" prefWidth="250">
+                    <Label text="📖" style="-fx-font-size: 32px;"/>
+                    <Label text="Survivor Stories" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                    <Label text="Read inspiring journeys." styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                </VBox>
+                <VBox styleClass="card" alignment="CENTER" spacing="12" prefWidth="250">
+                    <Label text="🤝" style="-fx-font-size: 32px;"/>
+                    <Label text="Find a Mentor" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                    <Label text="Connect with trained peers." styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                </VBox>
+            </HBox>
+
+            <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+        </VBox>
+    </center>
+</BorderPane>

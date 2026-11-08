@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.survivor.SurvivorSettingsController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Settings" styleClass="h1"/>
+                <Label text="Manage your account, privacy, and security preferences." styleClass="body-text"/>
+                
+                <!-- Account Section -->
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Account" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="Username" styleClass="body-text"/>
+                    <TextField fx:id="usernameField" promptText="Your username" prefWidth="400"/>
+                    <Label text="Email" styleClass="body-text"/>
+                    <TextField fx:id="emailField" promptText="your.email@example.com" prefWidth="400"/>
+                    <Label text="Phone" styleClass="body-text"/>
+                    <TextField fx:id="phoneField" promptText="+256 700 123 456" prefWidth="400"/>
+                    <Button text="Save Account Info" styleClass="btn-primary" onAction="#handleSaveAccount"/>
+                </VBox>
+
+                <!-- Privacy Section -->
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Privacy" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <CheckBox fx:id="anonymousReportsCheck" text="Allow anonymous reports" selected="true"/>
+                    <CheckBox fx:id="hideLocationCheck" text="Hide my location from caseworkers"/>
+                    <CheckBox fx:id="shareEvidenceCheck" text="Require my explicit consent before sharing evidence" selected="true"/>
+                    <Button text="Save Privacy Settings" styleClass="btn-primary" onAction="#handleSavePrivacy"/>
+                </VBox>
+
+                <!-- Notifications Section -->
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Notifications" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <CheckBox fx:id="emailNotificationsCheck" text="Receive email updates" selected="true"/>
+                    <CheckBox fx:id="smsNotificationsCheck" text="Receive SMS alerts for case updates"/>
+                    <CheckBox fx:id="pushNotificationsCheck" text="Receive in-app notifications" selected="true"/>
+                    <Button text="Save Notification Settings" styleClass="btn-primary" onAction="#handleSaveNotifications"/>
+                </VBox>
+
+                <!-- Security Section -->
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Security" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="Change PIN (for app lock)" styleClass="body-text"/>
+                    <PasswordField fx:id="currentPinField" promptText="Current PIN" prefWidth="300"/>
+                    <PasswordField fx:id="newPinField" promptText="New PIN (4-6 digits)" prefWidth="300"/>
+                    <PasswordField fx:id="confirmPinField" promptText="Confirm new PIN" prefWidth="300"/>
+                    <Button text="Update PIN" styleClass="btn-primary" onAction="#handleUpdatePin"/>
+                </VBox>
+
+                <!-- Danger Zone -->
+                <VBox styleClass="card" spacing="16" style="-fx-background-color: #FEF2F2;">
+                    <Label text="Danger Zone" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #DC2626;"/>
+                    <Label text="Once you delete your account, there is no going back. Please be certain." styleClass="body-text" wrapText="true"/>
+                    <Button text="Delete My Account" style="-fx-background-color: #DC2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20;" onAction="#handleDeleteAccount"/>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
