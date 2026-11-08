@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="About TogetherSafe" styleClass="h1"/>
+                <Label text="A survivor-centered GBV case management platform for Uganda." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="16" HBox.hgrow="ALWAYS">
+                        <Label text="🛡️" style="-fx-font-size: 32px;"/>
+                        <Label text="Our Mission" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <Label text="To protect survivors from abuse, exploitation, and neglect by providing safe reporting, accessible support, and stronger communities." styleClass="body-text" wrapText="true"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="16" HBox.hgrow="ALWAYS">
+                        <Label text="💜" style="-fx-font-size: 32px;"/>
+                        <Label text="Our Values" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <Label text="Safety, dignity, and respect for every survivor. We believe every person has the right to live free from violence." styleClass="body-text" wrapText="true"/>
+                    </VBox>
+                </HBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Who We Are" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="TogetherSafe connects survivors with trusted services, evidence vaults, counselling, and legal support across Uganda. We work with NGOs, police, medical facilities, and government agencies." styleClass="body-text" wrapText="true"/>
+                </VBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="How to Reach Us" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="📞 Emergency: 999 (Police) | 112 (Medical) | 0800 123 456 (Child Protection)" styleClass="body-text" wrapText="true"/>
+                    <Label text="📧 Email: support@togethersafe.org" styleClass="body-text" wrapText="true"/>
+                    <Label text="📍 Location: Kampala, Uganda" styleClass="body-text" wrapText="true"/>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

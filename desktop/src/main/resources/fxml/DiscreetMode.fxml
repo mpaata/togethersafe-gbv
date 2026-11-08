@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Discreet Mode" styleClass="h1"/>
+                <Label text="Privacy controls to help you use this app safely on a shared device." styleClass="body-text" wrapText="true"/>
+                
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Privacy Settings" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    
+                    <HBox alignment="CENTER_LEFT" spacing="16">
+                        <CheckBox text="Hide app name in taskbar (Disguised Mode)"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label text="Recommended" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </HBox>
+                    
+                    <HBox alignment="CENTER_LEFT" spacing="16">
+                        <CheckBox text="Require PIN to open the app"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    
+                    <HBox alignment="CENTER_LEFT" spacing="16">
+                        <CheckBox text="Auto-lock after 2 minutes of inactivity"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    
+                    <HBox alignment="CENTER_LEFT" spacing="16">
+                        <CheckBox text="Clear history on logout"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </VBox>
+
+                <VBox styleClass="card" spacing="12" style="-fx-background-color: #FEF2F2;">
+                    <Label text="⚠️ Emergency Panic Button" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #DC2626;"/>
+                    <Label text="Press Ctrl+Shift+X at any time to instantly minimize the app and open a fake screen. Use this if someone walks in." styleClass="body-text" wrapText="true"/>
+                    <Button text="Test Panic Button" style="-fx-background-color: #DC2626; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

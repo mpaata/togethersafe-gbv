@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Resources Library" styleClass="h1"/>
+                <Label text="Educational guides and tools to help you understand your rights and options." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="📘" style="-fx-font-size: 40px;"/>
+                        <Label text="Know Your Rights" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="A guide to your legal rights in Uganda." styleClass="body-text" wrapText="true"/>
+                        <Button text="Read Guide →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🩺" style="-fx-font-size: 40px;"/>
+                        <Label text="Health &amp; Wellbeing" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Medical support and mental health resources." styleClass="body-text" wrapText="true"/>
+                        <Button text="Explore →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="⚖️" style="-fx-font-size: 40px;"/>
+                        <Label text="Legal Aid" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Where to find free legal representation." styleClass="body-text" wrapText="true"/>
+                        <Button text="Find Help →" styleClass="btn-primary"/>
+                    </VBox>
+                </HBox>
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🏠" style="-fx-font-size: 40px;"/>
+                        <Label text="Safe Housing" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Emergency shelters and safe houses near you." styleClass="body-text" wrapText="true"/>
+                        <Button text="Find Shelter →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="👶" style="-fx-font-size: 40px;"/>
+                        <Label text="Child Protection" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="How to report child abuse and get help." styleClass="body-text" wrapText="true"/>
+                        <Button text="Learn More →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="💬" style="-fx-font-size: 40px;"/>
+                        <Label text="Survivor Stories" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Real stories of healing and hope." styleClass="body-text" wrapText="true"/>
+                        <Button text="Read Stories →" styleClass="btn-primary"/>
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

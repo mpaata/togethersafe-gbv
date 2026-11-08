@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Impact Dashboard" styleClass="h1"/>
+                <Label text="Real-time metrics on our work to keep survivors safe." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Cases Reported" styleClass="body-text"/>
+                        <Label text="1,247" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #4F46E5;"/>
+                        <Label text="↑ 18% vs last month" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Survivors Supported" styleClass="body-text"/>
+                        <Label text="2,856" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+                        <Label text="↑ 24% vs last month" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Referrals Made" styleClass="body-text"/>
+                        <Label text="890" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #F59E0B;"/>
+                        <Label text="↑ 12% vs last month" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Services Engaged" styleClass="body-text"/>
+                        <Label text="156" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #DC2626;"/>
+                        <Label text="↑ 8% vs last month" style="-fx-text-fill: #059669; -fx-font-size: 12px;"/>
+                    </VBox>
+                </HBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Recent Milestones" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="✅ Opened 3 new counselling centers in Northern Uganda." styleClass="body-text" wrapText="true"/>
+                    <Label text="✅ Trained 45 community volunteers on GBV response." styleClass="body-text" wrapText="true"/>
+                    <Label text="✅ Partnered with 12 new safe houses across the country." styleClass="body-text" wrapText="true"/>
+                    <Label text="✅ Processed over 200 emergency SOS requests within 5 minutes." styleClass="body-text" wrapText="true"/>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

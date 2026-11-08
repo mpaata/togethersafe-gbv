@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.survivor.ShareLinksController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Share Links" styleClass="h1"/>
+                <Label text="Generate time-limited secure links to share evidence with trusted professionals." styleClass="body-text" wrapText="true"/>
+                
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Create a Share Link" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    
+                    <Label text="Select Evidence" styleClass="body-text"/>
+                    <ComboBox fx:id="evidenceCombo" promptText="Choose an evidence file" prefWidth="500"/>
+                    
+                    <Label text="Share with" styleClass="body-text"/>
+                    <TextField fx:id="recipientField" promptText="Email address of the recipient" prefWidth="500"/>
+                    
+                    <Label text="Expires after" styleClass="body-text"/>
+                    <ComboBox fx:id="expiryCombo" promptText="24 hours" prefWidth="300"/>
+                    
+                    <Button text="🔗 Generate Secure Link" styleClass="btn-primary" onAction="#handleGenerate"/>
+                </VBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Active Share Links" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <ListView fx:id="activeLinksList" prefHeight="200"/>
+                    <Label text="Recipients can view the file but cannot download or forward it." styleClass="body-text" style="-fx-font-style: italic;"/>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.survivor.HealingController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Healing &amp; Wellbeing" styleClass="h1"/>
+                <Label text="Tools to help you process, heal, and rebuild." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🧘" style="-fx-font-size: 40px;"/>
+                        <Label text="Grounding Exercises" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="5-minute exercises to calm anxiety." styleClass="body-text" wrapText="true"/>
+                        <Button text="Start →" styleClass="btn-primary" onAction="#handleGrounding"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="📓" style="-fx-font-size: 40px;"/>
+                        <Label text="Journaling" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Guided prompts to process your feelings." styleClass="body-text" wrapText="true"/>
+                        <Button text="Begin →" styleClass="btn-primary" onAction="#handleJournaling"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="📚" style="-fx-font-size: 40px;"/>
+                        <Label text="Course Library" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Self-paced courses on trauma recovery." styleClass="body-text" wrapText="true"/>
+                        <Button text="Browse →" styleClass="btn-primary" onAction="#handleCourses"/>
+                    </VBox>
+                </HBox>
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🎵" style="-fx-font-size: 40px;"/>
+                        <Label text="Calming Sounds" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Soothing music and nature sounds." styleClass="body-text" wrapText="true"/>
+                        <Button text="Listen →" styleClass="btn-primary" onAction="#handleSounds"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="💬" style="-fx-font-size: 40px;"/>
+                        <Label text="Talk to Someone" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Connect with a trained counsellor." styleClass="body-text" wrapText="true"/>
+                        <Button text="Chat →" styleClass="btn-primary" onAction="#handleChat"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🛏️" style="-fx-font-size: 40px;"/>
+                        <Label text="Sleep Support" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Techniques to sleep better." styleClass="body-text" wrapText="true"/>
+                        <Button text="Learn →" styleClass="btn-primary" onAction="#handleSleep"/>
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

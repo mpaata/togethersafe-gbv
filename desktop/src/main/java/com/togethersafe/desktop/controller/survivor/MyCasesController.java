@@ -5,10 +5,15 @@ import com.togethersafe.desktop.model.CaseItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
@@ -42,7 +47,59 @@ public class MyCasesController implements Initializable {
             List<CaseItem> fetched = ApiClient.fetchCases();
             cases.setAll(fetched);
         } catch (Exception e) {
-            System.err.println("Could not fetch cases: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleNewCase() {
+        // Show a simple dialog to create a case
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("New Case");
+        dialog.setHeaderText("Report a New Case");
+
+        ButtonType createButtonType = new ButtonType("Create", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(createButtonType, ButtonType.CANCEL);
+
+        TextField typeField = new TextField();
+        typeField.setPromptText("Case Type (e.g., PHYSICAL_ASSAULT)");
+        
+        TextArea descField = new TextArea();
+        descField.setPromptText("Description");
+        descField.setPrefRowCount(3);
+
+        TextField locationField = new TextField();
+        locationField.setPromptText("Location");
+
+        VBox vbox = new VBox(10, new Label("Type:"), typeField, new Label("Description:"), descField, new Label("Location:"), locationField);
+        dialog.getDialogPane().setContent(vbox);
+
+        dialog.showAndWait().ifPresent(response -> {
+            if (response == createButtonType) {
+                try {
+                    String body = String.format(
+                        "{\"caseType\": \"%s\", \"description\": \"%s\", \"locationSummary\": \"%s\"}",
+                        typeField.getText(), descField.getText(), locationField.getText()
+                    );
+                    ApiClient.post("/cases", body);
+                    loadCases(); // Refresh the table
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    @FXML
+    private void goBack(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SurvivorHome.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root, 1280, 800);
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+            Stage stage = (Stage) casesTable.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -5,6 +5,7 @@ import com.togethersafe.backend.dto.CaseResponse;
 import com.togethersafe.backend.dto.CreateCaseRequest;
 import com.togethersafe.backend.entity.Case;
 import com.togethersafe.backend.entity.enums.CaseStatus;
+import com.togethersafe.backend.entity.enums.CasePriority;
 import com.togethersafe.backend.repository.CaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +32,13 @@ public class CaseController {
     @PostMapping
     public ApiResponse<CaseResponse> createCase(@RequestBody CreateCaseRequest request) {
         Case newCase = new Case();
-        newCase.setOrgId(1L); // Temporary: assume org_id 1 for now
+        newCase.setOrgId(1L);
         newCase.setCaseReference("CASE-" + UUID.randomUUID().toString().substring(0, 8));
         newCase.setCaseType(request.getCaseType());
         newCase.setDescription(request.getDescription());
         newCase.setLocationSummary(request.getLocationSummary());
         newCase.setStatus(CaseStatus.OPEN);
+        newCase.setPriority(CasePriority.MEDIUM);
         newCase.setIsActive(true);
         newCase.setCreatedAt(LocalDateTime.now());
         

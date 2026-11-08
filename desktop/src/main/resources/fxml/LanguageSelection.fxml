@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Language Selection" styleClass="h1"/>
+                <Label text="Choose the language you want to use. All text in the app will change." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" alignment="CENTER" HBox.hgrow="ALWAYS">
+                        <Label text="🇬🇧" style="-fx-font-size: 48px;"/>
+                        <Label text="English" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                        <Label text="Default language" styleClass="body-text"/>
+                        <Button text="Select" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" alignment="CENTER" HBox.hgrow="ALWAYS">
+                        <Label text="🇺🇬" style="-fx-font-size: 48px;"/>
+                        <Label text="Luganda" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                        <Label text="Oluganda" styleClass="body-text"/>
+                        <Button text="Select" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" alignment="CENTER" HBox.hgrow="ALWAYS">
+                        <Label text="🌍" style="-fx-font-size: 48px;"/>
+                        <Label text="Kiswahili" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                        <Label text="Swahili" styleClass="body-text"/>
+                        <Button text="Select" styleClass="btn-primary"/>
+                    </VBox>
+                </HBox>
+
+                <Label text="More languages coming soon (Runyankole, Ateso, Acholi)." styleClass="body-text" style="-fx-font-style: italic;"/>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

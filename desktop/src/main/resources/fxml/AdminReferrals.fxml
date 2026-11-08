@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.AdminPlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <VBox spacing="4">
+                        <Label text="Referrals" styleClass="h1"/>
+                        <Label text="Track referrals to service providers across Uganda." styleClass="body-text"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="+ New Referral" styleClass="btn-primary"/>
+                </HBox>
+
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Total Referrals" styleClass="body-text"/>
+                        <Label text="890" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #4F46E5;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Pending" styleClass="body-text"/>
+                        <Label text="45" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #F59E0B;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Accepted" styleClass="body-text"/>
+                        <Label text="723" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Completed" styleClass="body-text"/>
+                        <Label text="122" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+                    </VBox>
+                </HBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Recent Referrals" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <TableView prefHeight="400">
+                        <columns>
+                            <TableColumn text="Referral ID" prefWidth="120"/>
+                            <TableColumn text="Case ID" prefWidth="120"/>
+                            <TableColumn text="Service Provider" prefWidth="200"/>
+                            <TableColumn text="Status" prefWidth="120"/>
+                            <TableColumn text="Date" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Admin Dashboard" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

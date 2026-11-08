@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.togethersafe.desktop.controller.survivor.AiChatController"
+            styleClass="root" style="-fx-background-color: #F8FAFC;">
+
+    <top>
+        <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="16" style="-fx-background-color: #FFFFFF; -fx-padding: 16 32; -fx-border-color: #E2E8F0; -fx-border-width: 0 0 1 0;">
+            <Label text="← Back to Home" styleClass="back-button" onMouseClicked="#goBack"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Amani Model 1" style="-fx-font-weight: bold; -fx-text-fill: #0F172A; -fx-font-size: 16px;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Language:" styleClass="body-text"/>
+            <ComboBox fx:id="languageCombo" prefWidth="100"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox style="-fx-padding: 32;" spacing="16">
+            <HBox style="-fx-background-color: #FEF2F2; -fx-padding: 16; -fx-background-radius: 8;" spacing="12" alignment="CENTER_LEFT">
+                <Label text="⚠️" style="-fx-font-size: 20px;"/>
+                <Label text="Amani is an AI assistant. If you are in immediate danger, call 999." style="-fx-text-fill: #DC2626; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="📞 SOS" style="-fx-background-color: #DC2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" onAction="#handleSos"/>
+            </HBox>
+
+            <ScrollPane fx:id="chatScroll" fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-width: 0;">
+                <VBox fx:id="chatContainer" spacing="16" style="-fx-padding: 16;"/>
+            </ScrollPane>
+
+            <HBox spacing="16" alignment="CENTER_LEFT">
+                <TextField fx:id="messageField" promptText="Type your message here..." HBox.hgrow="ALWAYS" style="-fx-padding: 12; -fx-background-radius: 8; -fx-border-color: #E2E8F0; -fx-border-radius: 8;"/>
+                <Button text="Send ➤" styleClass="btn-primary" onAction="#handleSend"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

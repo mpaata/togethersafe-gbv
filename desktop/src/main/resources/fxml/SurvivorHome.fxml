@@ -2,6 +2,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.shape.SVGPath?>
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
@@ -9,72 +10,182 @@
             fx:controller="com.togethersafe.desktop.controller.survivor.SurvivorHomeController"
             styleClass="root">
 
-    <!-- Left Sidebar -->
+    <!-- LEFT SIDEBAR -->
     <left>
-        <VBox styleClass="sidebar" spacing="8">
-            <Label text="TogetherSafe" styleClass="sidebar-title"/>
-            <Label text="Home" styleClass="sidebar-menu-item-active"/>
-            <Label text="SOS Center" styleClass="sidebar-menu-item"/>
-            <Label text="My Cases" styleClass="sidebar-menu-item"/>
-            <Label text="Evidence Vault" styleClass="sidebar-menu-item"/>
-            <Label text="Find Help" styleClass="sidebar-menu-item"/>
-            <Label text="AI Chat" styleClass="sidebar-menu-item"/>
-            <Label text="Settings" styleClass="sidebar-menu-item"/>
-        </VBox>
-    </left>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                    style="-fx-background-color: #0A1642; -fx-background: #0A1642; -fx-min-width: 280px; -fx-pref-width: 280px; -fx-border-width: 0;">
+            <VBox styleClass="sidebar" spacing="0">
 
-    <!-- Main Content -->
-    <center>
-        <ScrollPane fitToWidth="true" styleClass="content-area">
-            <VBox spacing="24">
-                <!-- Header -->
-                <VBox spacing="8">
-                    <Label text="SOS Center" styleClass="h1"/>
-                    <Label text="In an emergency, you are not alone. Get immediate help." styleClass="body-text"/>
+                <HBox styleClass="sidebar-logo" alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 24;">
+                    <ImageView fitWidth="40" fitHeight="40" preserveRatio="true">
+                        <image><Image url="@/images/logo.jpeg"/></image>
+                    </ImageView>
+                    <VBox>
+                        <Label text="TogetherSafe" styleClass="sidebar-title"/>
+                        <Label text="Safer Children. Brighter Futures." style="-fx-text-fill: #A0ABC0; -fx-font-size: 10px;"/>
+                    </VBox>
+                </HBox>
+
+                <Label fx:id="navHome" text="Home" styleClass="sidebar-menu-item-active">
+                    <graphic><SVGPath content="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navAbout" text="About" styleClass="sidebar-menu-item" onMouseClicked="#goToAbout">
+                    <graphic><SVGPath content="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navImpact" text="Impact Dashboard" styleClass="sidebar-menu-item" onMouseClicked="#goToImpact">
+                    <graphic><SVGPath content="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navSponsor" text="Sponsor Recognition" styleClass="sidebar-menu-item" onMouseClicked="#goToSponsor">
+                    <graphic><SVGPath content="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navResources" text="Resources Library" styleClass="sidebar-menu-item" onMouseClicked="#goToResources">
+                    <graphic><SVGPath content="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+
+                <HBox style="-fx-padding: 12 24 12 24;">
+                    <Separator HBox.hgrow="ALWAYS" style="-fx-background-color: #1A275A;"/>
+                </HBox>
+
+                <Label text="EMERGENCY" styleClass="sidebar-section-title"/>
+                <Label fx:id="navSos" text="SOS Center" styleClass="sidebar-menu-item" onMouseClicked="#goToSos">
+                    <graphic><SVGPath content="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navSafety" text="Safety Planning" styleClass="sidebar-menu-item" onMouseClicked="#goToSafety">
+                    <graphic><SVGPath content="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navDiscreet" text="Discreet Mode" styleClass="sidebar-menu-item" onMouseClicked="#goToDiscreet">
+                    <graphic><SVGPath content="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+
+                <HBox style="-fx-padding: 12 24 12 24;">
+                    <Separator HBox.hgrow="ALWAYS" style="-fx-background-color: #1A275A;"/>
+                </HBox>
+
+                <Label text="AI CHATBOT" styleClass="sidebar-section-title"/>
+                <Label fx:id="navChat" text="Chat Interface" styleClass="sidebar-menu-item" onMouseClicked="#goToChat">
+                    <graphic><SVGPath content="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navLanguage" text="Language Selection" styleClass="sidebar-menu-item" onMouseClicked="#goToLanguage">
+                    <graphic><SVGPath content="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+
+                <HBox style="-fx-padding: 12 24 12 24;">
+                    <Separator HBox.hgrow="ALWAYS" style="-fx-background-color: #1A275A;"/>
+                </HBox>
+
+                <Label text="EVIDENCE VAULT" styleClass="sidebar-section-title"/>
+                <Label fx:id="navMyCases" text="My Cases" styleClass="sidebar-menu-item" onMouseClicked="#goToMyCases">
+                    <graphic><SVGPath content="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navUpload" text="Upload Evidence" styleClass="sidebar-menu-item" onMouseClicked="#goToUpload">
+                    <graphic><SVGPath content="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navShare" text="Share Links" styleClass="sidebar-menu-item" onMouseClicked="#goToShare">
+                    <graphic><SVGPath content="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navLegal" text="Legal Guide" styleClass="sidebar-menu-item" onMouseClicked="#goToLegal">
+                    <graphic><SVGPath content="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+
+                <HBox style="-fx-padding: 12 24 12 24;">
+                    <Separator HBox.hgrow="ALWAYS" style="-fx-background-color: #1A275A;"/>
+                </HBox>
+
+                <Label fx:id="navServices" text="Services" styleClass="sidebar-menu-item" onMouseClicked="#goToServices">
+                    <graphic><SVGPath content="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navHealing" text="Healing" styleClass="sidebar-menu-item" onMouseClicked="#goToHealing">
+                    <graphic><SVGPath content="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+                <Label fx:id="navCommunity" text="Community" styleClass="sidebar-menu-item" onMouseClicked="#goToCommunity">
+                    <graphic><SVGPath content="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+
+                <HBox style="-fx-padding: 12 24 12 24;">
+                    <Separator HBox.hgrow="ALWAYS" style="-fx-background-color: #1A275A;"/>
+                </HBox>
+
+                <Label fx:id="navSettings" text="Settings" styleClass="sidebar-menu-item" onMouseClicked="#goToSettings">
+                    <graphic><SVGPath content="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" styleClass="sidebar-icon"/></graphic>
+                </Label>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <VBox alignment="CENTER" spacing="8" style="-fx-padding: 24;">
+                    <Label text="💜" style="-fx-font-size: 32px;"/>
+                    <Label text="Every child matters." style="-fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <Label text="Report • Support • Protect" style="-fx-text-fill: #A0ABC0; -fx-font-size: 10px;"/>
                 </VBox>
 
-                <!-- SOS Button -->
-                <VBox styleClass="card" alignment="CENTER" spacing="16">
-                    <Label text="Need Immediate Help?" styleClass="h2"/>
-                    <Label text="Press the SOS button for emergency assistance." styleClass="body-text"/>
-                    <Button text="SOS NOW" styleClass="btn-sos" onAction="#handleSos"/>
-                </VBox>
-
-                <!-- Emergency Contacts -->
-                <VBox styleClass="card" spacing="16">
-                    <Label text="Emergency Contacts" styleClass="h2"/>
-                    <HBox spacing="16" alignment="CENTER_LEFT">
-                        <Label text="Police: 999" styleClass="body-text"/>
-                        <Region HBox.hgrow="ALWAYS"/>
-                        <Button text="Call" styleClass="btn-primary"/>
-                    </HBox>
-                    <HBox spacing="16" alignment="CENTER_LEFT">
-                        <Label text="Medical: 112" styleClass="body-text"/>
-                        <Region HBox.hgrow="ALWAYS"/>
-                        <Button text="Call" styleClass="btn-primary"/>
-                    </HBox>
-                    <HBox spacing="16" alignment="CENTER_LEFT">
-                        <Label text="Child Protection: 0800 123 456" styleClass="body-text"/>
-                        <Region HBox.hgrow="ALWAYS"/>
-                        <Button text="Call" styleClass="btn-primary"/>
-                    </HBox>
-                    <HBox spacing="16" alignment="CENTER_LEFT">
-                        <Label text="Counselling: 0800 333 444" styleClass="body-text"/>
-                        <Region HBox.hgrow="ALWAYS"/>
-                        <Button text="Call" styleClass="btn-primary"/>
-                    </HBox>
-                </VBox>
-
-                <!-- Quick Actions -->
-                <VBox styleClass="card" spacing="16">
-                    <Label text="Quick Actions" styleClass="h2"/>
-                    <HBox spacing="16">
-                        <Button text="Report Abuse" styleClass="btn-primary"/>
-                        <Button text="Find Help Map" styleClass="btn-primary"/>
-                        <Button text="Talk to Amani (AI)" styleClass="btn-primary"/>
-                    </HBox>
-                </VBox>
             </VBox>
         </ScrollPane>
+    </left>
+
+    <!-- CENTER -->
+    <center>
+        <VBox>
+            <!-- TOP BAR -->
+            <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="16" style="-fx-padding: 16 32 16 32; -fx-background-color: #FFFFFF; -fx-border-color: #E2E8F0; -fx-border-width: 0 0 1 0;">
+                <TextField styleClass="search-field" promptText="Search for help, resources, or information..." prefWidth="450"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox alignment="CENTER" spacing="8">
+                    <StackPane styleClass="globe-circle">
+                        <SVGPath content="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" styleClass="globe-icon"/>
+                    </StackPane>
+                    <ComboBox fx:id="languageCombo" styleClass="language-dropdown" prefWidth="110" onAction="#handleLanguageChange"/>
+                </HBox>
+                <Label text="👤 Guest" styleClass="clickable-text" onMouseClicked="#handleGuestProfile"/>
+            </HBox>
+
+            <!-- MAIN CONTENT -->
+            <ScrollPane fitToWidth="true" styleClass="content-area" style="-fx-background-color: #F8FAFC; -fx-border-width: 0;" VBox.vgrow="ALWAYS">
+                <VBox spacing="24">
+                    
+                    <Label text="Emergency &amp; Safety  •  SOS Center" style="-fx-text-fill: #2E44A8; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+                    
+                    <VBox spacing="8">
+                        <Label fx:id="lblSosTitle" text="SOS Center" styleClass="h1"/>
+                        <Label fx:id="lblSosDesc" text="In an emergency, you are not alone. Get immediate help, contact trusted people, and access safety resources." styleClass="body-text"/>
+                    </VBox>
+
+                    <HBox spacing="24">
+                        <VBox styleClass="card" alignment="CENTER" spacing="16" prefWidth="380" style="-fx-background-color: #DC2626;">
+                            <SVGPath content="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" style="-fx-fill: white; -fx-scale-x: 2.5; -fx-scale-y: 2.5;"/>
+                            <Label fx:id="lblNeedHelp" text="Need Immediate Help?" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF;"/>
+                            <Label fx:id="lblPressSos" text="Press the SOS button for emergency assistance." style="-fx-text-fill: #FEE2E2;"/>
+                            <Button fx:id="btnSos" text="📞 SOS NOW" styleClass="btn-sos" onAction="#handleSos" style="-fx-background-color: #FFFFFF; -fx-text-fill: #DC2626;"/>
+                        </VBox>
+
+                        <VBox styleClass="card" spacing="16" HBox.hgrow="ALWAYS">
+                            <Label fx:id="lblEmergencyContacts" text="Emergency Contacts" styleClass="h2"/>
+                            <Label fx:id="lblQuickAccess" text="Quick access to trusted helplines and support services." styleClass="body-text"/>
+                            
+                            <HBox spacing="16" alignment="CENTER_LEFT">
+                                <SVGPath content="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" style="-fx-fill: #4F46E5; -fx-scale-x: 1.2; -fx-scale-y: 1.2;"/>
+                                <VBox>
+                                    <Label fx:id="lblPolice" text="Police" style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="lblPoliceDesc" text="Report crime, get immediate help" styleClass="body-text"/>
+                                </VBox>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Label text="999" style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #DC2626;"/>
+                            </HBox>
+                            
+                            <Separator/>
+                            
+                            <HBox spacing="16" alignment="CENTER_LEFT">
+                                <SVGPath content="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" style="-fx-fill: #DC2626; -fx-scale-x: 1.2; -fx-scale-y: 1.2;"/>
+                                <VBox>
+                                    <Label fx:id="lblMedical" text="Medical" style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="lblMedicalDesc" text="Emergency medical assistance" styleClass="body-text"/>
+                                </VBox>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Label text="112" style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #DC2626;"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+
+                </VBox>
+            </ScrollPane>
+        </VBox>
     </center>
 </BorderPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Sponsor Recognition" styleClass="h1"/>
+                <Label text="TogetherSafe is powered by organizations committed to ending gender-based violence." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" alignment="CENTER" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🏛️" style="-fx-font-size: 48px;"/>
+                        <Label text="Ministry of Gender" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                        <Label text="Labour and Social Development" styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🤝" style="-fx-font-size: 48px;"/>
+                        <Label text="Raising Voices" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                        <Label text="Prevention of violence against women & children" styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="⚖️" style="-fx-font-size: 48px;"/>
+                        <Label text="FIDA Uganda" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                        <Label text="Legal aid and representation for survivors" styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                    </VBox>
+                </HBox>
+                <HBox spacing="24">
+                    <VBox styleClass="card" alignment="CENTER" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🌍" style="-fx-font-size: 48px;"/>
+                        <Label text="UNFPA Uganda" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                        <Label text="SafePal initiative and GBV response" styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="💙" style="-fx-font-size: 48px;"/>
+                        <Label text="Uganda Police" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                        <Label text="Child and Family Protection Unit" styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🕊️" style="-fx-font-size: 48px;"/>
+                        <Label text="Support the Cause" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                        <Label text="Contact us to become a sponsor" styleClass="body-text" wrapText="true" alignment="CENTER"/>
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.AdminPlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Settings" styleClass="h1"/>
+                <Label text="Manage organization settings and user permissions." styleClass="body-text"/>
+                
+                <VBox styleClass="card" spacing="16">
+                    <Label text="Organization" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="Organization Name" styleClass="body-text"/>
+                    <TextField promptText="Safe Haven NGO" prefWidth="400"/>
+                    <Label text="Contact Email" styleClass="body-text"/>
+                    <TextField promptText="contact@safehaven.org" prefWidth="400"/>
+                    <Label text="Contact Phone" styleClass="body-text"/>
+                    <TextField promptText="+256 700 123 456" prefWidth="400"/>
+                    <Button text="Save Changes" styleClass="btn-primary"/>
+                </VBox>
+
+                <VBox styleClass="card" spacing="16">
+                    <Label text="User Permissions" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <CheckBox text="Allow caseworkers to upload evidence" selected="true"/>
+                    <CheckBox text="Allow caseworkers to close cases" selected="true"/>
+                    <CheckBox text="Require admin approval for evidence sharing" selected="true"/>
+                    <CheckBox text="Enable audit log for all actions" selected="true"/>
+                    <Button text="Save Permissions" styleClass="btn-primary"/>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Admin Dashboard" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

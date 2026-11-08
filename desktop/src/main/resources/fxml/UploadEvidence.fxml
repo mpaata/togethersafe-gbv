@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.survivor.UploadEvidenceController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Upload Evidence" styleClass="h1"/>
+                <Label text="Securely upload photos, documents, audio, or video. All files are encrypted and stored safely." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="16" prefWidth="450">
+                        <Label text="New Upload" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        
+                        <Label text="Select Case" styleClass="body-text"/>
+                        <ComboBox fx:id="caseCombo" promptText="Choose a case" prefWidth="400"/>
+                        
+                        <Label text="File Type" styleClass="body-text"/>
+                        <ComboBox fx:id="fileTypeCombo" promptText="Image / Document / Audio / Video" prefWidth="400"/>
+                        
+                        <Label text="Upload File" styleClass="body-text"/>
+                        <Button text="📁 Choose File" styleClass="btn-primary" prefWidth="200" onAction="#handleChooseFile"/>
+                        <Label fx:id="fileNameLabel" text="No file selected" styleClass="body-text" style="-fx-font-style: italic;"/>
+                        
+                        <Label text="Privacy" styleClass="body-text"/>
+                        <RadioButton fx:id="radioPrivate" text="Private (only me)" selected="true"/>
+                        <RadioButton fx:id="radioShared" text="Share with assigned caseworker"/>
+                        
+                        <Button text="⬆ Upload" styleClass="btn-primary" prefWidth="200" onAction="#handleUpload"/>
+                    </VBox>
+
+                    <VBox styleClass="card" spacing="16" HBox.hgrow="ALWAYS">
+                        <Label text="My Uploads" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <ListView fx:id="uploadsList" prefHeight="300"/>
+                        <Label text="All files verified with SHA-256 checksum." styleClass="body-text" style="-fx-font-style: italic;"/>
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="back-button" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

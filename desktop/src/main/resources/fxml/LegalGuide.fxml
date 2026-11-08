@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.togethersafe.desktop.controller.BasePlaceholderController" styleClass="root">
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="24" style="-fx-padding: 32;">
+                <Label text="Legal Guide" styleClass="h1"/>
+                <Label text="Know your legal rights. This guide provides general information, not legal advice." styleClass="body-text" wrapText="true"/>
+                
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="⚖️" style="-fx-font-size: 40px;"/>
+                        <Label text="Protection Orders" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="You can apply for a court order to stop someone from contacting you." styleClass="body-text" wrapText="true"/>
+                        <Button text="Read More →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🏛️" style="-fx-font-size: 40px;"/>
+                        <Label text="Reporting to Police" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="How to file a report at the Child and Family Protection Unit." styleClass="body-text" wrapText="true"/>
+                        <Button text="Read More →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="📜" style="-fx-font-size: 40px;"/>
+                        <Label text="Court Process" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="What to expect if your case goes to court." styleClass="body-text" wrapText="true"/>
+                        <Button text="Read More →" styleClass="btn-primary"/>
+                    </VBox>
+                </HBox>
+                <HBox spacing="24">
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="👶" style="-fx-font-size: 40px;"/>
+                        <Label text="Child Custody" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Your rights as a parent and how to protect your children." styleClass="body-text" wrapText="true"/>
+                        <Button text="Read More →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🏠" style="-fx-font-size: 40px;"/>
+                        <Label text="Property Rights" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Your rights to the home and shared property." styleClass="body-text" wrapText="true"/>
+                        <Button text="Read More →" styleClass="btn-primary"/>
+                    </VBox>
+                    <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="🤝" style="-fx-font-size: 40px;"/>
+                        <Label text="Free Legal Aid" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label text="Contact FIDA Uganda for free legal representation." styleClass="body-text" wrapText="true"/>
+                        <Button text="Contact FIDA →" styleClass="btn-primary"/>
+                    </VBox>
+                </HBox>
+
+                <VBox styleClass="card" spacing="12" style="-fx-background-color: #FEF2F2;">
+                    <Label text="⚠️ Important" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #DC2626;"/>
+                    <Label text="This guide provides general information only. For legal advice specific to your situation, please consult a qualified lawyer or FIDA Uganda." styleClass="body-text" wrapText="true"/>
+                </VBox>
+
+                <Button fx:id="backButton" text="← Back to Home" styleClass="btn-primary" onAction="#goBack"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -39,6 +39,14 @@ public class ApiClient {
         return mapper.readTree(response.body());
     }
 
+        public static JsonNode register(String username, String password, String fullName, String role) throws IOException, InterruptedException {
+        String body = String.format(
+            "{\"username\": \"%s\", \"password\": \"%s\", \"fullName\": \"%s\", \"role\": \"%s\"}",
+            username, password, fullName, role);
+        return post("/auth/register", body);
+    }
+
+
     public static List<CaseItem> fetchCases() throws IOException, InterruptedException {
         JsonNode root = get("/cases");
         List<CaseItem> cases = new ArrayList<>();
